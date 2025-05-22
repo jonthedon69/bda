@@ -1,3 +1,4 @@
+#in terminal first do pip install pyspark
 from pyspark.sql import SparkSession
 
 # Initialize Spark session

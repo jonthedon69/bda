@@ -17,4 +17,5 @@ for line in sys.stdin:
     elif matrix == "B":
         for i in range(A_ROWS):
             print(f"{i} {col}\tB {row} {value}")
-#to run pg2 Get-Content matrix.txt | python mapper.py | sort | python reducer.py
+#to run pg2 Get-Content matrix.txt | python mapper.py | sort | python reducer.py  (OR)
+#to run pg2 type matrix.txt | python mapper.py | sort | python reducer.py

@@ -1,0 +1,33 @@
+> mongosh
+> use school
+> db.students.insertMany([
+  { name: "Alice", age: 20, grade: 88 },
+  { name: "Bob", age: 22, grade: 75 },
+  { name: "Charlie", age: 23, grade: 85 },
+  { name: "David", age: 21, grade: 95 },
+  { name: "Eve", age: 20, grade: 78 },
+  { name: "Frank", age: 25, grade: 82 }
+])
+> db.students.insertMany([
+  { name: "Alice", age: 20, grade: 88 },
+  { name: "Bob", age: 22, grade: 75 },
+  { name: "Charlie", age: 23, grade: 85 },
+  { name: "David", age: 21, grade: 95 },
+  { name: "Eve", age: 20, grade: 78 },
+  { name: "Frank", age: 25, grade: 82 }
+])
+> db.students.countDocuments({})
+> db.students.find().sort({ grade: -1 })
+> db.students.find().sort({ grade: -1 }).limit(3)
+> db.students.find().skip(2)
+> db.students.aggregate([
+  {
+    $group: {
+      _id: "$age",
+      averageGrade: { $avg: "$grade" }
+    }
+  },
+  {
+    $sort: { averageGrade: -1 }
+  }
+])

@@ -1,6 +1,7 @@
 #in terminal first do pip install pyspark
 
 from pyspark.sql import SparkSession
+from pyspark.sql.functions import explode, split, col
 
 # Initialize Spark session
 spark = SparkSession.builder.appName("WordCount").getOrCreate()
